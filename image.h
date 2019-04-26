@@ -11,7 +11,7 @@ struct pixel {
 
 class Image {
     public:
-        Image(std::string hexdump);
+        Image(std::string hexdump, int width, int height);
     private:
         void store(std::string hexdump);
         std::vector<std::vector<pixel>> image;

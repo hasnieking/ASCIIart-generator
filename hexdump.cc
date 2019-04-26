@@ -49,7 +49,6 @@ void Hexdump::handle(std::string filename) {
 
     //store the result
     dump = stream.str();
-    dump.pop_back();
     //Close the file.
     input.close();
 }

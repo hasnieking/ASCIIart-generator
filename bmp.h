@@ -5,7 +5,8 @@
 
 class BMP {
     public:
-    BMP(std::string hexdump);
+        BMP(std::string hexdump);
+        //std::vector<pixel> getImage();
         
     private:
         //https://engineering.purdue.edu/ece264/17au/hw/HW15
@@ -28,6 +29,6 @@ class BMP {
         uint32_t  important_colors; // Important colors 
 
         void storeHeader(const std::string hexdump); //stores header
-        void storeImage(std::string hexdump); //stores image as pixels
+        void storeImage(const std::string hexdump); //stores image as pixels
         Image *image; //image
 };
