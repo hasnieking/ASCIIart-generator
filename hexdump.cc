@@ -42,8 +42,7 @@ void Hexdump::handle(std::string filename) {
         for (int i = 0; i < 16; i++ ) {   
             counter2++;
             if (counter2 <= counter1) {
-                stream << std::hex << std::setw(2) << std::setfill('0') 
-                  << (int)buffer[i] << ' ';
+                stream << std::hex << std::setw(2) << std::setfill('0') << (int)buffer[i];
             }
         }
     }
