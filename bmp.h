@@ -6,6 +6,7 @@
 class BMP {
     public:
         BMP(std::string hexdump);
+        ~BMP();
         //std::vector<pixel> getImage();
         
     private:

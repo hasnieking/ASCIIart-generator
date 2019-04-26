@@ -8,6 +8,11 @@ BMP::BMP(std::string hexdump) {
     storeImage(hexdump);
 }
 
+//deconstructor
+BMP::~BMP() {
+    if (image != NULL) delete image;
+}
+
 //store the header information
 void BMP::storeHeader(const std::string hexdump) {
     type = hextoint(hexendianconverter(hexdump.substr(0,4)));
@@ -28,6 +33,7 @@ void BMP::storeHeader(const std::string hexdump) {
     important_colors = hextoint(hexendianconverter(hexdump.substr(100,8)));
 }
 
+//store all individual pixels
 void BMP::storeImage(const std::string hexdump) {
     image = new Image(hexdump.substr(2 * offset), (int)width_px, (int)height_px);
 }
