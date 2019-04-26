@@ -6,12 +6,9 @@
 #include <sstream>
 #include "hexdump.h"
 
+//constructor
 Hexdump::Hexdump(std::string filename) {
-    try {
-        handle(filename);
-    } catch (const char* msg) {
-        std::cerr << msg << std::endl;
-    }
+    handle(filename);
 }
 
 //generate dump
@@ -40,7 +37,7 @@ void Hexdump::handle(std::string filename) {
             break;
         }
 
-        //Print 16 data items, in pairs, in hexadecimal.
+        //Store 16 data items, in pairs, in hexadecimal.
         counter2 = 0;
         for (int i = 0; i < 16; i++ ) {   
             counter2++;

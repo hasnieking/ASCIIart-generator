@@ -13,9 +13,15 @@ int main(int argc, char **argv) {
     }
     
     for (int i = 1; i < argc; i++) {
-        currentdump = new Hexdump(argv[i]);
-        hexdumps.push_back(currentdump->getDump());
-        delete currentdump;
+        try {
+            currentdump = new Hexdump(argv[i]);
+        } catch (const char* msg) {
+            currentdump = NULL;
+        }
+        if (currentdump != NULL) {
+            hexdumps.push_back(currentdump->getDump());
+            delete currentdump;
+        }
     }
 
     for (unsigned int i = 0; i < hexdumps.size(); i++) {
