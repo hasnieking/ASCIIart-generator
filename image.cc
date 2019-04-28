@@ -16,10 +16,9 @@ void Image::store(std::string hexdump, int width, int height) {
     int counter = 0;
     std::vector<Pixel> row;
     Pixel currentpixel;
-    int pixelsize = COLOURSIZE / 4;
-    int padding = ((4 - (pixelsize * width) % 4) % 4) * 2;
-    for (unsigned int i = 0; i < hexdump.size(); i += pixelsize) {
-        currentpixel = convert(hexdump.substr(i, pixelsize));
+    int padding = ((4 - (3 * width) % 4) % 4) * COLOURSTRSIZE;
+    for (unsigned int i = 0; i < hexdump.size(); i += PIXELSTRSIZE) {
+        currentpixel = convert(hexdump.substr(i, PIXELSTRSIZE));
         row.push_back(currentpixel);
         counter++;
         if (counter >= width) {
