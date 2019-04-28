@@ -1,6 +1,5 @@
 *ImageMagick*
 .vscode
-*.bmp
 hex
 *.zip
 *.o
@@ -9,3 +8,7 @@ ascii
 check
 optimization.cc
 optimization
+3x4bitmap.bmp
+4x6bitmap.bmp
+8x8bitmap.bmp
+large.bmp
