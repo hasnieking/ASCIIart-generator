@@ -7,3 +7,5 @@ hex
 ascii
 *.png
 check
+optimization.cc
+optimization

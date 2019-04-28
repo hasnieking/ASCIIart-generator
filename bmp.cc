@@ -2,6 +2,8 @@
 #include "bmp.h"
 #include "general.h"
 
+#include <iostream>
+
 //constructor
 BMP::BMP(std::string hexdump) {
     storeHeader(hexdump);
@@ -35,5 +37,9 @@ void BMP::storeHeader(const std::string hexdump) {
 
 //store all individual pixels
 void BMP::storeImage(const std::string hexdump) {
-    image = new Image(hexdump.substr(2 * offset), (int)width_px, (int)height_px);
+    image = new Image(hexdump.substr(bits_per_pixel / 3 / 4 * offset), (int)width_px, (int)height_px);
+}
+
+Pixel BMP::getPixel(int x, int y) {
+    return image->getpixel(x, y);
 }

@@ -1,6 +1,5 @@
 //general.cc
 #include <string>
-#include <iostream>
 #include <sstream>
 
 //convert endians to each other

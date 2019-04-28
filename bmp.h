@@ -8,7 +8,8 @@ class BMP {
         BMP(std::string hexdump);
         ~BMP();
         //std::vector<pixel> getImage();
-        
+        Pixel getPixel(int x, int y);
+
     private:
         //https://engineering.purdue.edu/ece264/17au/hw/HW15
         //bmp header
