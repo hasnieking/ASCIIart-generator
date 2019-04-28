@@ -5,11 +5,10 @@
 
 class BMP {
     public:
-        BMP(std::string hexdump);
-        ~BMP();
-        //std::vector<pixel> getImage();
-        Pixel getPixel(int x, int y);
-
+        BMP(std::string hexdump); //constructor
+        ~BMP(); //destructor
+        Pixel getPixel(int x, int y); //get a single pixel
+        std::vector<std::vector<Pixel>> getImage(int &x, int &y); //get the vector of all pixels
     private:
         //https://engineering.purdue.edu/ece264/17au/hw/HW15
         //bmp header

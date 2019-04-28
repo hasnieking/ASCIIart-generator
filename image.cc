@@ -39,7 +39,12 @@ Pixel Image::convert(std::string values) {
     return pixel;
 }
 
+//get a single pixel
 Pixel Image::getpixel(int x, int y) {
-    //std::cout << "barbarbar" << (int)image[y][x].blue << (int)image[y][x].blue << std::endl;
     return image[y][x];
+}
+
+//get the vector of all pixels
+std::vector<std::vector<Pixel>> Image::getImage() {
+    return image;
 }

@@ -2,12 +2,13 @@
 #include "bmp.h"
 #include "general.h"
 
-#include <iostream>
-
 //constructor
 BMP::BMP(std::string hexdump) {
     storeHeader(hexdump);
     storeImage(hexdump);
+    if (compression != 0) {
+        throw "Can't handle compressed bmp images.";
+    }
 }
 
 //deconstructor
@@ -40,6 +41,12 @@ void BMP::storeImage(const std::string hexdump) {
     image = new Image(hexdump.substr(bits_per_pixel / 3 / 4 * offset), (int)width_px, (int)height_px);
 }
 
+//get a single pixel
 Pixel BMP::getPixel(int x, int y) {
     return image->getpixel(x, y);
+}
+
+//get the vector of pixels
+std::vector<std::vector<Pixel>> BMP::getImage(int &x, int &y) {
+    return image->getImage();
 }

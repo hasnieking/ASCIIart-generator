@@ -16,12 +16,13 @@ struct Pixel {
 //the individual pixels image
 class Image {
     public:
-        Image(std::string hexdump, int width, int height);
-        Pixel getpixel(int x, int y);
+        Image(std::string hexdump, int width, int height); //constructor
+        Pixel getpixel(int x, int y); //get a single pixel
+        std::vector<std::vector<Pixel>> getImage(); //get vector of all pixels
     private:
-        void store(std::string hexdump, int width, int height);
-        Pixel convert(std::string values);
-        std::vector<std::vector<Pixel>> image;
+        void store(std::string hexdump, int width, int height); //store all pixels
+        Pixel convert(std::string values); //convert hex string to intensity
+        std::vector<std::vector<Pixel>> image; //vector of all pixels
 
 };
 
