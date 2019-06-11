@@ -9,8 +9,11 @@ const int COLOURSIZE = PIXELSIZE / 3; //bits per colour
 const int COLOURSTRSIZE = COLOURSIZE / 4; //chars per colour
 const float REDM = 0.2126, GREENM = 0.7152, BLUEM = .0722; //for multiplying to calculate luminance
 
+//grayscale
 const std::string GRAYSCALE = "$@B%%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'. ";
 const unsigned int DIVIDER = GRAYSCALE.size();
+
+const int WHITESPACE = 5; //amount of whitespace between images
 
 std::string hexendianconverter(const std::string input);
 int hextoint(const std::string input);

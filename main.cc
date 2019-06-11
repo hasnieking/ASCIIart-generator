@@ -37,6 +37,8 @@ int main(int argc, char **argv) {
         delete bmp;
         currentpict = new Picture(imagevect);
         delete currentpict;
+
+        std::cout << std::string(WHITESPACE, '\n');
     }
 
     return 0;
