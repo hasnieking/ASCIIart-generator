@@ -22,6 +22,11 @@ char Picture::convertpixel(int x, int y) {
     float sum = red + green + blue;
 
     int intensityonscale = sum / (255.f / DIVIDER);
+    if (intensityonscale < 0) {
+        intensityonscale = 0;
+    } else if (intensityonscale >= (signed int)GRAYSCALE.size()) {
+        intensityonscale = GRAYSCALE.size() - 1;
+    }
 
     return GRAYSCALE[intensityonscale];
 }

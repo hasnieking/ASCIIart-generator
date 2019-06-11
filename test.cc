@@ -31,8 +31,6 @@ int main() {
     if (imagevect[5][5].red != 0 || imagevect[5][5].green != 0 || imagevect[5][5].blue != 255) return 1;
     delete bmp;
 
-    Picture* print = new Picture(imagevect);
-    delete print;
 
     cout << "Code works correctly" << endl;
     return 0;
