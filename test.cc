@@ -3,6 +3,7 @@
 #include "general.h"
 #include "bmp.h"
 #include "hexdump.h"
+#include "picture.h"
 
 using namespace std;
 
@@ -26,10 +27,12 @@ int main() {
     bmp = new BMP(dump2);
     pixel = bmp->getPixel(5, 5);
     if (pixel.red != 0 || pixel.green != 0 || pixel.blue != 255) return 1;
-    int width, height;
-    vector<vector<Pixel>> imagevect = bmp->getImage(width, height);
+    vector<vector<Pixel>> imagevect = bmp->getImage();
     if (imagevect[5][5].red != 0 || imagevect[5][5].green != 0 || imagevect[5][5].blue != 255) return 1;
     delete bmp;
+
+    Picture* print = new Picture(imagevect);
+    delete print;
 
     cout << "Code works correctly" << endl;
     return 0;

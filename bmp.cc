@@ -47,6 +47,6 @@ Pixel BMP::getPixel(int x, int y) {
 }
 
 //get the vector of pixels
-std::vector<std::vector<Pixel>> BMP::getImage(int &x, int &y) {
+std::vector<std::vector<Pixel>> BMP::getImage() {
     return image->getImage();
 }

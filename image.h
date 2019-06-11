@@ -21,7 +21,7 @@ class Image {
         std::vector<std::vector<Pixel>> getImage(); //get vector of all pixels
     private:
         void store(std::string hexdump, int width, int height); //store all pixels
-        Pixel convert(std::string values); //convert hex string to intensity
+        Pixel convert(std::string values); //convert hex string to intensity individual colours (0-255)
         std::vector<std::vector<Pixel>> image; //vector of all pixels
 
 };

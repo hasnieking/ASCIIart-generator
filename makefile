@@ -1,6 +1,6 @@
 CC = g++
 CompileParms = -c -g -Wall -std=c++14
-OBJS = hexdump.o general.o bmp.o image.o
+OBJS = hexdump.o general.o bmp.o image.o picture.o
 
 all: main.o $(OBJS)
 	g++ -Wall -o ascii main.o $(OBJS)
@@ -15,6 +15,8 @@ bmp.o: bmp.cc bmp.h
 	$(CC) $(CompileParms) bmp.cc
 image.o: image.cc image.h
 	$(CC) $(CompileParms) image.cc
+picture.o: picture.cc picture.h
+	$(CC) $(CompileParms) picture.cc
 main.o: main.cc
 	$(CC) $(CompileParms) main.cc
 test.o: test.cc

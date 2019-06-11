@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 #include "hexdump.h"
+#include "picture.h"
+#include "bmp.h"
 
 
 int main(int argc, char **argv) {
@@ -26,9 +28,15 @@ int main(int argc, char **argv) {
         }
     }
 
-    //print all dumps
+    //print all images
+    Picture* currentpict;
+    BMP* bmp;
     for (unsigned int i = 0; i < hexdumps.size(); i++) {
-        std::cout << hexdumps[i] << std::endl;
+        bmp = new BMP(hexdumps[i]);
+        std::vector<std::vector<Pixel>> imagevect = bmp->getImage();
+        delete bmp;
+        currentpict = new Picture(imagevect);
+        delete currentpict;
     }
 
     return 0;
